@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<hmtl lang="pt-br">    
+<head>
+    <meta charset="utf-8">
+    <title> Objeto - Cálculo de área retângulo</title>
+</head>
+<body>
+   
+    <script>        
+        function Area() {
+            var altura;
+            var base;
+            this.getX = function(){
+                return altura;
+            };
+            this.setX = function (value) {
+                altura = value;
+            };
+            this.getY = function() {
+                return base;
+            };
+            this.setY = function(value) {
+                base = value;
+            };
+            this.calculaarea = function(x,y) {
+                var area;
+                area = x*y;
+                return area;
+            };
+            
+        }
+        
+        nRetangulo = new Area();
+        var xx;
+        var yy;
+        xx = prompt("Informe o valor da altura: ");
+        nRetangulo.setX(xx);
+        yy = prompt("Informe o valor da base: ");
+        nRetangulo.setY(yy);
+        alert(nRetangulo.getY() + ' = base\n' + nRetangulo.getX() + '= altura\n'+ nRetangulo.calculaarea(xx,yy) + ' = area' );
+    </script>
+    
+</body>
+</hmtl>

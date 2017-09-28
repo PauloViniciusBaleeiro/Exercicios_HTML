@@ -1,0 +1,130 @@
+<!--Atalho para aparecer todo o contexto de HTML >> html:5 + tab -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contas</title>
+</head>
+
+<body>
+   <script>
+    
+       function Conta() {
+           var nome_correntista;
+           var banco;
+           var nr_conta;
+           var saldo;
+           this.getNome = function() {
+               return nome_correntista;
+           };
+           this.setNome = function(value) {
+               nome_correntista = value;
+           };
+           this.getBanco = function() {
+               return banco;
+           };
+           this.setBanco = function(value) {
+               banco = value;
+           };
+           this.getNrconta = function() {
+               return nr_conta;
+           };
+           this.setNrconta = function(value) {
+               nr_conta = value;
+           };
+           this.getSaldo = function() {
+               return saldo;
+           };
+           this.setSaldo = function(value) {
+               saldo = value;
+           };
+       }
+       
+       function Corrente() {
+           var valor;
+           this.getEspecial = function() {
+               return valor;
+           };
+           this.setEspecial = function(value) {
+               valor = value;
+           };
+       }
+       
+       function Poupanca() {
+           var juros;
+           var dtvencimento;
+           this.getJuros = function() {
+               return juros;
+           };
+           this.getDtvencimento = function() {
+               return dtvencimento;
+           };
+           this.setJuros = function(value) {
+               juros = value;
+           };
+           this.setDtvencimento = function(value) {
+               dtvencimento = value;
+           };
+       }
+       
+       Corrente.prototype = new Conta();
+       Poupanca.prototype = new Conta();
+       
+       n1Corrente = new Corrente();
+       n2Corrente = new Corrente();
+       n3Corrente = new Corrente();
+       
+       n1Poupanca = new Poupanca();
+       n2Poupanca = new Poupanca();
+       n3Poupanca = new Poupanca();
+       
+       
+       n1Corrente.setNome('João da silva');
+       n1Corrente.setBanco('Caixa');
+       n1Corrente.setNrconta('001');
+       n1Corrente.setSaldo(1000.00);
+       n1Corrente.setEspecial(100.00);
+       alert('Conta Corrente\nNome = '+ n1Corrente.getNome() + '\nBanco = ' + n1Corrente.getBanco() + '\nNr conta = ' + n1Corrente.getNrconta() + '\nSaldo = ' + n1Corrente.getSaldo() + '\nEspecial = ' +n1Corrente.getEspecial());
+    
+       n1Poupanca.setNome('João da silva');
+       n1Poupanca.setBanco('Caixa');
+       n1Poupanca.setNrconta('013.0001');
+       n1Poupanca.setSaldo(10000.00);
+       n1Poupanca.setJuros('1% a.m.');
+       n1Poupanca.setDtvencimento('10');
+       alert('Conta Poupança\n'+n1Poupanca.getNome()+'\n'+ n1Poupanca.getBanco()+'\n'+ n1Poupanca.getNrconta()+ '\n'+n1Poupanca.getSaldo()+ '\n' + n1Poupanca.getJuros()+ '\n' + n1Poupanca.getDtvencimento());
+       
+       n2Corrente.setNome('José da silva');
+       n2Corrente.setBanco('Caixa');
+       n2Corrente.setNrconta('002');
+       n2Corrente.setSaldo(2000.00);
+       n2Corrente.setEspecial(200.00);
+       alert('Conta Corrente\nNome = '+ n2Corrente.getNome() + '\nBanco = ' + n2Corrente.getBanco() + '\nNr conta = ' + n2Corrente.getNrconta() + '\nSaldo = ' + n2Corrente.getSaldo() + '\nEspecial = ' +n2Corrente.getEspecial());
+    
+       n2Poupanca.setNome('José da silva');
+       n2Poupanca.setBanco('Caixa');
+       n2Poupanca.setNrconta('013.0002');
+       n2Poupanca.setSaldo(20000.00);
+       n2Poupanca.setJuros('1,2% a.m.');
+       n2Poupanca.setDtvencimento('5');
+       alert('Conta Poupança\n'+n2Poupanca.getNome()+'\n'+ n2Poupanca.getBanco()+'\n'+ n2Poupanca.getNrconta()+ '\n'+n2Poupanca.getSaldo()+ '\n' + n2Poupanca.getJuros()+ '\n' + n2Poupanca.getDtvencimento());
+       
+       n3Corrente.setNome('Joaquim da silva');
+       n3Corrente.setBanco('Caixa');
+       n3Corrente.setNrconta('003');
+       n3Corrente.setSaldo(3000.00);
+       n3Corrente.setEspecial(300.00);
+       alert('Conta Corrente\nNome = '+ n3Corrente.getNome() + '\nBanco = ' + n3Corrente.getBanco() + '\nNr conta = ' + n3Corrente.getNrconta() + '\nSaldo = ' + n3Corrente.getSaldo() + '\nEspecial = ' +n3Corrente.getEspecial());
+    
+       n3Poupanca.setNome('Joaquim da silva');
+       n3Poupanca.setBanco('Caixa');
+       n3Poupanca.setNrconta('013.0001');
+       n3Poupanca.setSaldo(30000.00);
+       n3Poupanca.setJuros('1,3% a.m.');
+       n3Poupanca.setDtvencimento('15');
+       alert('Conta Poupança\n'+n3Poupanca.getNome()+'\n'+ n3Poupanca.getBanco()+'\n'+ n3Poupanca.getNrconta()+ '\n'+n3Poupanca.getSaldo()+ '\n' + n3Poupanca.getJuros()+ '\n' + n3Poupanca.getDtvencimento());
+    
+    </script>
+    
+</body>
+</html>
