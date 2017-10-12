@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Maiuscula/Minuscula</title>
+    
+    </head>
+    <body>
+       <h1 align="center">Transformando o texto em letra maiúscula ou minúscula </h1>
+        <form name="teste" align=center>
+            
+            Texto:
+            <input name="idTexto" type="text" id="IdTexto" maxlength="80">
+            <br>
+            Maiúscula: <input type="checkbox" name="Maiuscula" id="Maiuscula" value="1" onclick="maiuscula();">
+            <br>
+            Minúscula: <input type="checkbox" name="Minúscula" id="Minuscula"
+            value="2" onclick="minuscula();">
+            
+        </form>
+        
+        
+        <script>
+        function maiuscula(){
+            document.forms.teste.elements[0].value = document.forms.teste.elements[0].value.toUpperCase();
+            document.forms.teste.Maiuscula.checked = true;
+            document.forms.teste.Minuscula.checked = false;
+        };
+            function minuscula(){
+                document.forms.teste.IdTexto.value = document.forms.teste.IdTexto.value.toLowerCase();
+                document.teste.Minuscula.checked = true;
+                document.teste.Maiuscula.checked = false;
+            };
+            
+        </script>
+    </body>
+</html>
