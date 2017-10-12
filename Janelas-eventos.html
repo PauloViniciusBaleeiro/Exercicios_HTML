@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Exercicio da Janela</title>
+	<style type="text/css">
+        img{
+            width: 350px;
+            
+        }
+    </style>
+
+	<script type="text/javascript">
+		function abraJanela(obj) {
+			obj.src = "./Img/janela_aberta2.jpg";
+			
+			var t = document.getElementById("cabeca");
+			t.innerHTML = "Janela Aberta";
+		}
+
+		function fechaJanela() {
+			document.getElementById("janela").src = "./Img/janela_fechada2.jpg";
+			
+			var t = document.getElementById("cabeca");
+			t.innerHTML = "Janela Fechada";
+		}
+
+		function quebraJanela() {
+			document.getElementById("janela").src = "./Img/janela_quebrada.jpg";
+			
+			var t = document.getElementById("cabeca");
+			t.innerHTML = "Janela Quebrada";
+		}
+	</script>
+</head>
+
+<body>
+	<h1 id="cabeca">Janela Fechada</h1>
+	<img src="./Img/janela_fechada2.jpg" id="janela" onmouseover="abraJanela(this)" onclick="quebraJanela()" onmouseout="fechaJanela()">
+</body>
+
+</html>
