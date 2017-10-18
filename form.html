@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Formulário</title>
+    <script>
+        function validar(){
+            if (document.formulario1.elements[0].value.length < 10){
+                alert("Nome Inválido!");
+                document.formulario1.elements[0].select();
+                document.formulario1.elements[0].focus();
+                return false;
+            }
+            if ((document.formulario1.elements[1].value.indexOf("@") <0) ||
+                (document.formulario1.elements[1].value.indexOf(".") < 0)){
+                alert("E-mail inválido! Não contém @ ou .");
+                document.forms.elements[1].select();
+                document.forms.elements[1].focus();
+                return false;             
+         } 
+            if (document.formulario1.comentarios.value.length < 20){
+                alert("O comentário precisa conter no mínimo 20 letras para ser válido! Favor revisar!");
+                document.formulario1.comentarios.select();
+                document.formulario1.comentarios.focus(1);
+                return false;
+            }
+            if (document.formulario1.survey[0].checked === true)
+                alert ("Obrigado, agradecemos a sua visita! Volte sempre!");
+            else{
+                if (document.formulario1.survey[1].checked === true){
+                    alert("Que bom! Agradecemos o seu retorno a esta página!");
+            }else {
+                alert("Por favor, responda a pesquisa!");
+                return false;
+            }
+        }
+    }    
+    </script>
+</head>
+<body bgcolor="green">
+    <h1 align="center"><font color="#FFFFFF"><b>Formulário Principal</b></font></h1>
+    <form name="formulario1" action="mailto:pauloviniciusbf@gmail.com" method="post" onSubmit="return validar();" >
+       <i><font color="#FFFFFF">Nome :</font></i>
+        <input type=text name="Nome" size="60" title="Digite seu nome">
+        <br>
+        <br>
+        <br>
+        <i><font color="#FFFFFF">E-mail:</font></i>
+        <input type="email" name="E-mail" size="60" title="Digite seu e-mail">
+        <br>
+        <br>
+        <br>
+        <i><font color="#FFFFFF">Comentários:</font></i>
+        <br>
+        <textarea name="comentarios" rows="8" cols="69" title="Deixe aqui seus comentários"></textarea>
+        <br>
+        <br>
+        <br>
+        <div id="survey" align="center">
+            <h2> Pesquisa:</h2>
+            <i>Primeira visita a esta página?</i>
+            <br><br>
+            <input type="radio" name="survey" value="s" title="clique aqui se já visitou esta página anteriormente"><b>Sim</b>
+            <input type="radio" name="survey" value="n" title="Clique aqui se esta for sua primeira visita"><b>Não</b>
+            <br><br><br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </div>
+    </form>
+</body>
+</html>
