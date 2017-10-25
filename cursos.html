@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pesquisa de cursos</title>
+        <script>
+        function pergunta(p){
+            var option = confirm("Você será redirecionado para " +p+ "\n Deseja continuar?"); 
+            if (option == false){
+                return 0;
+            }else {
+               window.location.href = p;
+            }
+        }
+            
+        </script>
+    </head>
+    <body align="center">
+        <select id="cursos" name="curso" onchange="pergunta(this.value)">
+            <option id = "ADS" value="http://www.fatecsorocaba.edu.br/curso_ads.asp"> Análise e Desenvolvimento de Sistemas</option>
+            <option id = "SBM" value="http://www.fatecsorocaba.edu.br/curso_sb.asp"> Sistema Biomédicos</option>
+            <option id = "LOG" value="http://www.fatecsorocaba.edu.br/curso_log.asp"> Logística</option>
+            <option id = "PMC" value="http://www.fatecsorocaba.edu.br/curso_proj.asp"> Projetos Mecânicos</option>
+            <option id = "PMT" value="http://www.fatecsorocaba.edu.br/curso_pm.asp"> Processos Metalúrgicos</option>
+            <option id = "FBM" value="http://www.fatecsorocaba.edu.br/curso_fm.asp"> Fabricação Mecânica</option>
+            <option id = "EAT" value="http://www.fatecsorocaba.edu.br/curso_ea.asp"> Eletrônica Automotiva</option>
+            <option id = "EAD" value="http://www.fatecsorocaba.edu.br/curso_ead-ge.asp"> Gestão Industrial (EAD)</option>
+        </select>
+    </body>
+</html>
