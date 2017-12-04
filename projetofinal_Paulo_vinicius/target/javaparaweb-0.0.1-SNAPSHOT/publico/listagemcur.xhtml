@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Listagem de Cursos</title>
+</h:head>
+<body>
+<h:form id="listagem">
+		<h:dataTable value="#{CursoBean.listaCursos}" var="item"
+			emptyMessage="Nenhum Registro Encontrado" paginator="true" rows="10"
+			aginatorPosition="bottom" selectionMode="single"
+			selection="#{CursoBean.curso}">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="IDCURSO" />
+				</f:facet>
+				<h:outputText value="#{item.IDCURSO}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="nome" />
+				</f:facet>
+				<h:outputText value="#{item.NOMECURSO}" />
+			</h:column>
+		</h:dataTable>
+
+		<h:button value="Voltar" outcome="/index.xhtml" />
+	</h:form>
+</body>
+</html>

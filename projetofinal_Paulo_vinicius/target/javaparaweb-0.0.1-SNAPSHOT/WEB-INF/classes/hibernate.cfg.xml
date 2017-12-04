@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- O hibernate config é para configurar o hibernate. Já o persistence é 
+	para o JPA. Se estiver usando o hibernate com o JPA vai precisar definir 
+	os dois. -->
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Configuração da conexão com o banco Derby e dialeto -->
+		<!-- property name="dialect">org.hibernate.dialect.DerbyDialect</property> -->
+		<property name="hibernate.dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
+		<property name="connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+
+		<!-- url de conexao aponta para o banco de dados -->
+
+		<property name="connection.url">jdbc:derby://localhost:1527/javaparaweb;create=true;update=true</property>
+		<property name="connection.username">app</property>
+		<property name="connection.password">app</property>
+
+
+		<!-- current_session_context_class thread necessario ao filtro de conexao, 
+			indica que deve ser diferente a cada nova thread, cada requisicao que chega 
+			ao servidor é tratada como uma thread diferente -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- criara automaticamente as tabelas caso nao existam -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- Usando as configurações do C3PO para pool de conexões -->
+		<property name="c3po.min_size">5</property>
+		<property name="c3po.max_size">20</property>
+		<property name="c3po.timeout">300</property>
+		<property name="c3po.max_statements">50</property>
+		<property name="c3po.idle_test_period">3000</property>
+
+		<!-- Configurações de debug -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="generate_statistics">true</property>
+		<property name="use_sql_comments">true</property>
+
+
+		<!-- Mapeando classes -->
+		<mapping class="br.com.projeto.javaparaweb.equipamento.Equipamento" />
+		<mapping class="br.com.projeto.javaparaweb.curso.Curso" />
+		<mapping class="br.com.projeto.javaparaweb.professor.Professor" />
+
+		<mapping class="br.com.projeto.javaparaweb.emprestimo.Emprestimo" />
+
+	</session-factory>
+</hibernate-configuration>

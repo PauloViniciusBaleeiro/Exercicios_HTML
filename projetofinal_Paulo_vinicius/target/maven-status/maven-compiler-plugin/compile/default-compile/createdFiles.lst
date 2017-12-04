@@ -1,0 +1,10 @@
+br\fatec\projetofinal\controller\CursoRN.class
+br\fatec\projetofinal\util\HibernateUtil.class
+br\fatec\projetofinal\dao\DAOFactoryCurso.class
+br\fatec\projetofinal\model\Curso.class
+br\fatec\projetofinal\model\Equipamento.class
+br\fatec\projetofinal\dao\CursoDAOHibernate.class
+br\fatec\projetofinal\model\Professor.class
+br\fatec\projetofinal\model\Emprestimo.class
+br\fatec\projetofinal\controller\CursoBean.class
+br\fatec\projetofinal\dao\CursoDAO.class

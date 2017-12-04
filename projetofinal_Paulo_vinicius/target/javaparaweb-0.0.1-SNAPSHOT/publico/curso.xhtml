@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cadastro de Cursos</title>
+</h:head>
+<h:body>
+<h1>Cadastro de Cursos</h1>
+	<h:form id="cadastro">
+		<h:messages />
+		<h:inputHidden value="#{CursoBean.curso.IDCURSO}" />
+
+		<h:panelGrid columns="4"
+			columnClasses="cellGridFormLabel,none,cellGridFormLabel,none"
+			cellpadding="10" cellspacing="1">
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id="nome" label="Nome"
+				value="#{CursoBean.curso.NOMECURSO}" size="30" maxlength="30"
+				required="true" requiredMessage="Curso não tem nome?">
+				<f:validateLength minimum="5" maximum="30" />
+			</h:inputText>
+
+			<h:outputText value="" />
+
+
+		</h:panelGrid>
+
+		<h:commandButton value="Salvar" action="#{CursoBean.salvar}" />
+	
+		<h:button value="Voltar" outcome="/index.xhtml" />
+		<br />
+	</h:form>
+</h:body>
+</html>
